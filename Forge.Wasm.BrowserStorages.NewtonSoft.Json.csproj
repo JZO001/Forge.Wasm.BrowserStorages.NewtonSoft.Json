@@ -10,7 +10,7 @@
 	<PropertyGroup>
 		<TargetFrameworks>netstandard2.0;netcoreapp3.1;net6.0;net7.0</TargetFrameworks>
 		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>..\.Documents\Forge.pfx</AssemblyOriginatorKeyFile>
+		<AssemblyOriginatorKeyFile>..\..\.Documents\Forge.pfx</AssemblyOriginatorKeyFile>
 		<ProjectGuid>{CED85F52-B01C-4C35-A9DD-D16CD64A8D49}</ProjectGuid>
 		<DocumentationFile>Forge.Wasm.BrowserStorages.NewtonSoft.Json.xml</DocumentationFile>
 	</PropertyGroup>
@@ -36,6 +36,7 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
+	  <None Remove="Forge.Wasm.BrowserStorages.NewtonSoft.Json.csproj.vspscc" />
 	  <None Remove="Forge.Wasm.BrowserStorages.NewtonSoft.Json.xml" />
 	</ItemGroup>
 
@@ -52,11 +53,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="..\LICENSE">
+		<None Include="LICENSE">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
-		<None Include="..\README.md">
+		<None Include="README.md">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
