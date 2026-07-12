@@ -33,6 +33,7 @@
 		<FileVersion>$(AssemblyVersion)</FileVersion>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageTags>serialization, localstorage, webassembly, wasm, provider, sessionstorage, localstorage-api, blazor, sessionstorage-api</PackageTags>
+		<PackageOutputPath>../.Documents/</PackageOutputPath>
 	</PropertyGroup>
 	
 	<ItemGroup>
