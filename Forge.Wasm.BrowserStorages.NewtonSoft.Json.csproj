@@ -8,11 +8,11 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.0;net6.0;net7.0;net8.0;net9.0;net10.0</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0;net8.0;net9.0;net10.0;net11.0</TargetFrameworks>
 		<SignAssembly>true</SignAssembly>
-		<AssemblyOriginatorKeyFile>..\..\.Documents\Forge.pfx</AssemblyOriginatorKeyFile>
+		<AssemblyOriginatorKeyFile>..\.Documents\Forge.snk</AssemblyOriginatorKeyFile>
 		<ProjectGuid>{CED85F52-B01C-4C35-A9DD-D16CD64A8D49}</ProjectGuid>
-		<DocumentationFile>Forge.Wasm.BrowserStorages.NewtonSoft.Json.xml</DocumentationFile>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
 	
 	<PropertyGroup>
@@ -20,25 +20,28 @@
 		<Company>Forge Project Contributor(s)</Company>
 		<Copyright>Copyright © Zoltan Juhasz, 2022-2026</Copyright>
 		<PackageId>Forge.Wasm.BrowserStorages.NewtonSoft.Json</PackageId>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Title>Forge Wasm BrowserStorages NewtonSoft.Json</Title>
 		<Description>NewtonSoft.Json serializer for Forge.Wasm.BrowserStorages</Description>
 		<PackageProjectUrl>https://github.com/JZO001/Forge.Wasm.BrowserStorages.NewtonSoft.Json</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/JZO001/Forge.Wasm.BrowserStorages.NewtonSoft.Json</RepositoryUrl>
 		<Authors>Zoltan Juhasz</Authors>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>logo.png</PackageIcon>
 		<RepositoryType>git</RepositoryType>
-		<AssemblyVersion>1.0.5.0</AssemblyVersion>
+		<AssemblyVersion>1.1.1.0</AssemblyVersion>
 		<Version>$(AssemblyVersion)</Version>
 		<FileVersion>$(AssemblyVersion)</FileVersion>
-		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageTags>serialization, localstorage, webassembly, wasm, provider, sessionstorage, localstorage-api, blazor, sessionstorage-api</PackageTags>
 		<PackageOutputPath>../.Documents/</PackageOutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
 	
 	<ItemGroup>
 	  <None Remove="Forge.Wasm.BrowserStorages.NewtonSoft.Json.csproj.vspscc" />
-	  <None Remove="Forge.Wasm.BrowserStorages.NewtonSoft.Json.xml" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -49,7 +52,7 @@
 		<ProjectReference Include="..\Forge.Wasm.BrowserStorages\Forge.Wasm.BrowserStorages.csproj" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0' or '$(TargetFramework)' == 'net7.0' or '$(TargetFramework)' == 'net8.0' or '$(TargetFramework)' == 'net9.0' or '$(TargetFramework)' == 'net10.0'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'net8.0' or '$(TargetFramework)' == 'net9.0' or '$(TargetFramework)' == 'net10.0' or '$(TargetFramework)' == 'net11.0'">
 		<SupportedPlatform Include="browser" />
 	</ItemGroup>
 
@@ -62,10 +65,14 @@
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
+		<None Include="logo.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	<!--<Target Name="PostBuild" AfterTargets="PostBuildEvent">
 		<Exec Command="echo F|xcopy /r /y &quot;$(TargetDir)$(TargetName).dll&quot; &quot;$(SolutionDir).Output\$(TargetFramework)\$(TargetName).dll&quot;&#xD;&#xA;echo F|xcopy /r /y &quot;$(TargetDir)$(TargetName).pdb&quot; &quot;$(SolutionDir).Output\$(TargetFramework)\$(TargetName).pdb&quot;&#xD;&#xA;echo F|xcopy /r /y &quot;$(TargetDir)$(TargetName).xml&quot; &quot;$(SolutionDir).Output\$(TargetFramework)\$(TargetName).xml&quot;&#xD;&#xA;" />
-	</Target>
+	</Target>-->
 
 </Project>

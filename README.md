@@ -1,5 +1,5 @@
 # Forge.Wasm.BrowserStorages.NewtonSoft.Json
-Forge.Wasm.BrowserStorages.NewtonSoft.Json is a library extension that provides Nettonsoft.Json serialization provider Forge.Wasm.BrowserStorages library.
+Forge.Wasm.BrowserStorages.NewtonSoft.Json is a library extension that provides a Newtonsoft.Json serialization provider for the Forge.Wasm.BrowserStorages library.
 
 
 ## Installing
